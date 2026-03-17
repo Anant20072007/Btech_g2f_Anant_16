@@ -1,0 +1,47 @@
+#include <stdio.h>
+
+// Function using mathematical formula (most efficient)
+int sumFormula(int n) {
+    if (n < 0) {
+        printf("Error: Please enter a positive number!\n");
+        return -1;
+    }
+    return n * (n + 1) / 2;
+}
+
+// Function using loop method
+int sumLoop(int n) {
+    if (n < 0) {
+        printf("Error: Please enter a positive number!\n");
+        return -1;
+    }
+    
+    int total = 0;
+    for (int i = 1; i <= n; i++) {
+        total += i;
+    }
+    return total;
+}
+
+int main() {
+    int n;
+    
+    printf("Enter a positive integer n: ");
+    scanf("%d", &n);
+    
+    printf("\n--- Results ---\n");
+    
+    // Using formula method
+    int result1 = sumFormula(n);
+    if (result1 != -1) {
+        printf("Sum using formula (1 + 2 + ... + %d) = %d\n", n, result1);
+    }
+    
+    // Using loop method
+    int result2 = sumLoop(n);
+    if (result2 != -1) {
+        printf("Sum using loop (1 + 2 + ... + %d) = %d\n", n, result2);
+    }
+    
+    return 0;
+}
